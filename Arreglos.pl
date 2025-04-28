@@ -137,12 +137,14 @@ print "Fin del bloque 18\n";
 ##################################################
 
 # Bloque 19
+my $x = [1, 2, 3]; # Ejemplo de referencia a array
 print "@$x";
 
 print "Fin del bloque 19\n";
 ##################################################
 
 # Bloque 20
+my $y = [4, 5, 6]; # Ejemplo de referencia a array
 my @list3 = map{$_->[0] + $_->[1]} zip ($x, $y);
 print dump @list3;
 
@@ -269,8 +271,8 @@ print "Fin del bloque 35\n";
 
 # Bloque 36
 @a = ('a' .. 'e');
-$a = join ":", @a;
-print $a;
+my $a_str = join ":", @a;
+print $a_str;
 
 print "Fin del bloque 36\n";
 ##################################################
@@ -296,7 +298,7 @@ print "Fin del bloque 38\n";
 @b = (1 .. 3);
 splice @a, 2, 1, @b;
 
-print `@a: `, dump (@a), "\n";
+print "@a: ", dump (@a), "\n";
 
 print "Fin del bloque 39\n";
 ##################################################
@@ -305,13 +307,14 @@ print "Fin del bloque 39\n";
 @a = ('a' .. 'e');
 @b = (1 .. 3);
 splice (@a, 2, 0, @b);
-print `@a: `, dump(@a), "\n";
+print "@a: ", dump(@a), "\n";
 
 print "Fin del bloque 40\n";
 ##################################################
 
 # Bloque 41
-print dump @{$arreglo->[3]}[0,2]
+$arreglo = [[1,2,3],[4,5,6],[7,8,9]]; # Ejemplo de referencia a array 2D
+print dump @{$arreglo->[1]}[0,2];
 
 print "Fin del bloque 41\n";
 ##################################################
@@ -544,6 +547,7 @@ print "Fin del bloque 66\n";
 ##################################################
 
 # Bloque 67
+my %hash = (key1 => [1,2,3], key2 => [4,5,6]); # Ejemplo de hash
 map {print "$_ : \n"; map {print "\t$_\n"} @{$hash{$_}}} keys %hash;
 
 print "Fin del bloque 67\n";
@@ -608,7 +612,7 @@ print "Fin del bloque 72\n";
 ##################################################
 
 # Bloque 73
-$text = "cadena"; 
+my $text = "cadena"; 
 print join ' ', ($text =~ m/([^aeiou]+[aeiou]+)/g);
 
 print "Fin del bloque 73\n";
@@ -628,20 +632,23 @@ print "Fin del bloque 75\n";
 ##################################################
 
 # Bloque 76
+my @stock = (); # Ejemplo de array vacío
 print dump @stock;
 
 print "Fin del bloque 76\n";
 ##################################################
 
 # Bloque 77
-my $empleado = new Empleado('Maria', 'maria@epn.edu.ec');
+# Asumiendo que Empleado es una clase definida en otro lugar
+# my $empleado = new Empleado('Maria', 'maria@epn.edu.ec');
 
 print "Fin del bloque 77\n";
 ##################################################
 
 # Bloque 78
-$empleado2->nombre('Jose'); 
-$empleado2->email (' jose@epn.edu.ec');
+my $empleado2 = {}; # Hash reference
+$empleado2->{nombre} = 'Jose'; 
+$empleado2->{email} = 'jose@epn.edu.ec';
 
 print "Fin del bloque 78\n";
 ##################################################
@@ -656,16 +663,17 @@ print "Fin del bloque 79\n";
 ##################################################
 
 # Bloque 80
-$sueldo->nombre('Brian'); 
-$sueldo->email('brian@epn.edu.ec');
+my $sueldo = {}; # Hash reference
+$sueldo->{nombre} = 'Brian'; 
+$sueldo->{email} = 'brian@epn.edu.ec';
 
 print "Fin del bloque 80\n";
 ##################################################
 
 # Bloque 81
-$sueldo2->nombre('Juan');  
-$sueldo2->email('juan@epn.edu.ec')
+my $sueldo2 = {}; # Hash reference
+$sueldo2->{nombre} = 'Juan';  
+$sueldo2->{email} = 'juan@epn.edu.ec';
 
 print "Fin del bloque 81\n";
 ##################################################
-

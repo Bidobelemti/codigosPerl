@@ -37,7 +37,7 @@ print "Fin del bloque 4\n";
 ##################################################
 
 # Bloque 5
-my $x = [0,2,4];
+$x = [0,2,4];
 print $x;
 
 print "Fin del bloque 5\n";
