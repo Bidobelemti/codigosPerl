@@ -177,7 +177,7 @@ print "Fin del bloque 24\n";
 ##################################################
 
 # Bloque 25
-my @arreglo = (1,3,5);
+@arreglo = (1,3,5);
 my @foo = @arreglo;
 @arreglo =();
 print "arreglo:", dump (@arreglo), "\n";
@@ -251,7 +251,7 @@ print "Fin del bloque 33\n";
 ##################################################
 
 # Bloque 34
-my @a = (2 .. 7);
+@a = (2 .. 7);
 my @b = ('a' .. 'e');
 
 print "$_ " for @a;
@@ -357,7 +357,7 @@ print "Fin del bloque 46\n";
 ##################################################
 
 # Bloque 47
-my @arreglo = ([1,2,3],[4,-5,6],[7,8,9],[10,11,12]);
+@arreglo = ([1,2,3],[4,-5,6],[7,8,9],[10,11,12]);
 
 print "Fin del bloque 47\n";
 ##################################################
@@ -429,7 +429,7 @@ print "Fin del bloque 54\n";
 ##################################################
 
 # Bloque 55
-my $var1 = shift @$var;
+$var1 = shift @$var;
 print dump $var1;
 
 print "Fin del bloque 55\n";
@@ -580,7 +580,7 @@ print "Fin del bloque 69\n";
 ##################################################
 
 # Bloque 70
-my @array = ();
+@array = ();
 if (@array){
     print "Variable \@array definida.\n";
 }
