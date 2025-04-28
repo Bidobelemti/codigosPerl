@@ -1,16 +1,30 @@
+use strict;
+use warnings;
+use Data::Dump qw(dump);
+use List::Util qw(zip min max sum);
+use Tie::IxHash;
+
+
+# ==================== Configuración y Librerías ====================
+
+# Bloque 1
 # Todo código debe tener al menos esas 3 funciones
 use strict;
 use warnings;
 use Data::Dump qw(dump);
 
+print "Fin del bloque 1\n";
 ##################################################
 
+# Bloque 2
 # Librerías adicionales
 use List::Util qw(zip min max sum);
 use Tie::IxHash;
 
+print "Fin del bloque 2\n";
 ##################################################
 
+# Bloque 3
 package Empleado {
     use strict;
     use warnings;
@@ -41,8 +55,10 @@ package Empleado {
     1;
 }
 
+print "Fin del bloque 3\n";
 ##################################################
 
+# Bloque 4
 package Sueldo {
     use strict;
     use warnings;
@@ -67,5 +83,6 @@ package Sueldo {
     }
 }
 
+print "Fin del bloque 4\n";
 ##################################################
 
