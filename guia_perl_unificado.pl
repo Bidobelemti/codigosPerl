@@ -122,7 +122,7 @@ print dump @arreglo;
 print $arreglo[0];
 $arreglo[0] = 5;
 print $arreglo[0];
-my @arreglo = (1,3,5);
+@arreglo = (1,3,5);
 my @foo = @arreglo;
 @arreglo =();
 print "arreglo:", dump (@arreglo), "\n";
@@ -164,7 +164,7 @@ foreach my $elem (@arreglo3){
 while (my ($i, $elem)= each @arreglo3){
     printf "%d\t%s\n", $i, $elem;
 }
-my @a = (2 .. 7);
+@a = (2 .. 7);
 my @b = ('a' .. 'e');
 
 print "$_ " for @a;
@@ -203,7 +203,7 @@ print dump $arreglo->[3];
 print $arreglo ->[3][1];
 print $arreglo;
 print dump $arreglo->[3];
-print dump @{$arreglo->[3]}[0,2]
+print dump @{$arreglo->[3]}[0,2];
 print dump @$arreglo[1,3];
 my $longitud = @$arreglo;
 print "# filas: ", $longitud, "\n";
@@ -222,7 +222,7 @@ for (my $i = 0; $i < @$arreglo; $i++){
     }
     print "\n";
 }
-my @arreglo = ([1,2,3],[4,-5,6],[7,8,9],[10,11,12]);
+@arreglo = ([1,2,3],[4,-5,6],[7,8,9],[10,11,12]);
 for (my $i = 0; $i < @arreglo; $i++){
     print dump ($arreglo[$i]), "\n";
 }
@@ -377,7 +377,7 @@ print dump $stock;
 %$stock = ();
 print dump $stock; 
 $stock = alimenta_hash();
-foreach $clave (keys %$stock) {
+foreach my $clave (keys %$stock) {
     printf "fruta: %s: %d\n", $clave, $stock->{$clave}; 
 }
 print map "$_ = $stock->{$_}\n", keys %$stock;
@@ -412,11 +412,11 @@ my $meses = {Jan => 1, Feb => 2, Mar => 3,
               Apr => 4, May => 5, Jun => 6,
               Jul => 7, Aug => 8, Sep => 9,
               Oct => 10, Nov => 11, Dec => 12};
-print $meses->{'Jan'}
+print $meses->{'Jan'};
 my %rev_meses = reverse %$meses;
 print $rev_meses{1}, "\n";
 print dump %rev_meses;
-my %hash = (Apples => [4, "Delicious red", "medium"],
+%hash = (Apples => [4, "Delicious red", "medium"],
             "Canadian Bacon" => [1, "package", "1/2 pound"]
 );
 print $hash{"Canadian Bacon"}->[1];
@@ -489,11 +489,11 @@ print "variable \$B no esta definida.\n" if defined $B;
 
 $costo = 100 unless defined ($costo);
 
-my %hash = ();
+%hash = ();
 if (%hash){
     print "Variable \%hash definida.\n";
 }
-my @array = ();
+@array = ();
 if (@array){
     print "Variable \@array definida.\n";
 }
@@ -557,7 +557,7 @@ unless ($numero > 10) {
 }else{
     print "Número $numero es mayor a 10.\n"
 }
-my ($i, $suma) = (0, 0);
+($i, $suma) = (0, 0);
 while ($i < 10) {
     $suma = $suma + $i++;
 }
@@ -611,7 +611,7 @@ print "El resultado de la suma es $suma \n";
 for(my ($i, $j) = (0, 0); $i < 10; $i++, $j+=2) {
     printf "i:%d j:%d\n", $i, $j; 
 }
-my @lista = (7, 11, 22, 5, 6, 7, 45); 
+@lista = (7, 11, 22, 5, 6, 7, 45); 
 foreach my $elemento (@lista) {
     printf "%d ", $elemento;
 }
