@@ -190,11 +190,11 @@ printf "\@b: %s\n", "@b";
 @b = (1 .. 3);
 splice @a, 2, 1, @b;
 
-print `@a: `, dump (@a), "\n";
+print '@a:' , dump (@a), "\n";
 @a = ('a' .. 'e');
 @b = (1 .. 3);
 splice (@a, 2, 0, @b);
-print `@a: `, dump(@a), "\n";
+print '@a:' , dump(@a), "\n";
 
 my $arreglo = [[1,2,3], [4, -5, 6], [7,8,9], [10,11,12]];
 print dump $arreglo;
