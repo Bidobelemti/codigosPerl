@@ -783,7 +783,7 @@ package Sueldo {
     sub new {
         my ($class, $dias_trabajados, $sueldo_diario) = (shift, @_);
 
-        $self = {
+        my $self = {
             dias_trabajados => $dias_trabajados // 0,
             sueldo_diario   => $sueldo_diario // 0,
         };
