@@ -791,7 +791,7 @@ package Sueldo {
     }
 
     sub sueldo {
-        $self = shift @_;
+        my $self = shift @_;
 
         # print "Father class: ", $self->SUPER::nombre(), "\n";
 
