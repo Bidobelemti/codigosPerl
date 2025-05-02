@@ -569,7 +569,7 @@ while ($indice < @frutas) {
     print "indice: $indice\tfruta: $frutas[$indice]\n";
     $indice++;
 }
-($i, $suma) = (0, 0);
+my ($i, $suma) = (0, 0);
 
 do{
     $suma = $suma + $i++;  
