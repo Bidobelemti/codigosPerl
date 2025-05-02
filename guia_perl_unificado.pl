@@ -558,7 +558,7 @@ unless ($numero > 10) {
     print "Número $numero es mayor a 10.\n"
 }
 my $i=0;
-my $suma = 0;
+$suma = 0;
 ($i, $suma) = (0, 0);
 while ($i < 10) {
     $suma = $suma + $i++;
@@ -730,44 +730,6 @@ sub suma2{
     return $s;
 }
 print suma2( 1 .. 8, "xa" ), "\n"; 
-# Una clase tiene atributos (propiedades) y métodos (funciones).
-
-# Se define una clase con la palabra package
-
-# Una clase que tenga un constructor (new) permite crear un objeto.
-
-# Una clase sin constructor se llama clase estática.
-package Empleado {
-    use strict;
-    use warnings;
-
-    sub new {
-        my ($class, $nombre, $email) = (shift, @_);
-
-        my $self = {
-            nombre => $nombre,
-            email  => $email,
-        };
-
-        return bless($self, $class);
-    }
-
-    sub nombre {
-        my ($self, $nombre) = @_;
-        $self->{nombre} = $nombre if $nombre;
-        return $self->{nombre};
-    }
-
-    sub email {
-        my ($self, $email) = @_;
-        $self->{email} = $email if $email;
-        return $self->{email};
-    }
-    
-    1;
-}
-
-
 
 my $empleado = new Empleado('Maria', 'maria@epn.edu.ec');
 print $empleado->nombre(); 
@@ -818,6 +780,39 @@ print dump $sueldo;
 print $sueldo->sueldo(); 
 my $sueldo2 = new Sueldo(18, 90); 
 $sueldo2->nombre('Juan');  
-$sueldo2->email('juan@epn.edu.ec')
+$sueldo2->email('juan@epn.edu.ec');
 print $sueldo2->sueldo(); 
 print dump $sueldo2; 
+
+package Empleado {
+    use strict;
+    use warnings;
+
+    sub new {
+        my ($class, $nombre, $email) = (shift, @_);
+
+        my $self = {
+            nombre => $nombre,
+            email  => $email,
+        };
+
+        return bless($self, $class);
+    }
+
+    sub nombre {
+        my ($self, $nombre) = @_;
+        $self->{nombre} = $nombre if $nombre;
+        return $self->{nombre};
+    }
+
+    sub email {
+        my ($self, $email) = @_;
+        $self->{email} = $email if $email;
+        return $self->{email};
+    }
+    
+    1;
+}
+
+
+
