@@ -557,6 +557,8 @@ unless ($numero > 10) {
 }else{
     print "Número $numero es mayor a 10.\n"
 }
+my $i=0;
+my $suma = 0;
 ($i, $suma) = (0, 0);
 while ($i < 10) {
     $suma = $suma + $i++;
@@ -569,8 +571,7 @@ while ($indice < @frutas) {
     print "indice: $indice\tfruta: $frutas[$indice]\n";
     $indice++;
 }
-my $i=0;
-my $suma = 0;
+
 ($i, $suma) = (0, 0);
 
 do{
