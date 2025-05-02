@@ -746,6 +746,35 @@ my %empleado2 = (
 );
 print "nombre: $empleado2{nombre}\n";
 print "email: $empleado2{email}\n";
+package Empleado {
+    use strict;
+    use warnings;
+
+    sub new {
+        my ($class, $nombre, $email) = (shift, @_);
+
+        my $self = {
+            nombre => $nombre,
+            email  => $email,
+        };
+
+        return bless($self, $class);
+    }
+
+    sub nombre {
+        my ($self, $nombre) = @_;
+        $self->{nombre} = $nombre if $nombre;
+        return $self->{nombre};
+    }
+
+    sub email {
+        my ($self, $email) = @_;
+        $self->{email} = $email if $email;
+        return $self->{email};
+    }
+    
+    1;
+}
 package Sueldo {
     use strict;
     use warnings;
@@ -784,35 +813,7 @@ $sueldo2->email('juan@epn.edu.ec');
 print $sueldo2->sueldo(); 
 print dump $sueldo2; 
 
-package Empleado {
-    use strict;
-    use warnings;
 
-    sub new {
-        my ($class, $nombre, $email) = (shift, @_);
-
-        my $self = {
-            nombre => $nombre,
-            email  => $email,
-        };
-
-        return bless($self, $class);
-    }
-
-    sub nombre {
-        my ($self, $nombre) = @_;
-        $self->{nombre} = $nombre if $nombre;
-        return $self->{nombre};
-    }
-
-    sub email {
-        my ($self, $email) = @_;
-        $self->{email} = $email if $email;
-        return $self->{email};
-    }
-    
-    1;
-}
 
 
 
