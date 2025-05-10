@@ -1,5 +1,5 @@
 use strict;
-use warning;
+use warnings;
 use Data::Dump qw(dump);
 use AI::MXNet qw(mx)
 use Chart::Plotly;
