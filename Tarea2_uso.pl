@@ -1,4 +1,4 @@
-use string;
+use strict;
 use warning;
 use Data::Dump qw(dump);
 use AI::MXNet qw(mx)
