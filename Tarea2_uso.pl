@@ -7,6 +7,7 @@ use Chart::Plotly::Plot;
 use Chart::Plotly::Trace::Scatter;
 use Chart::Plotly qw(show_plot);
 #Esto es de ejemplo
+=pod
 use Chart::Plotly 'show_plot';
 my $data = { x    => [ 1 .. 10 ],
              mode => 'markers',
@@ -35,3 +36,12 @@ my $bessel      = Surface->new(
     z => bessj0( rvals( zeroes( $bessel_size, $bessel_size ) ) / 2 )
 );
 show_plot([$bessel]);
+=cut
+
+my $x = mx->nd->arange(start => 0, stop => 12, step => 1);
+print $x;
+my $y = $x -> as_in_context(mx->cpu(1));
+print $y;
+
+my $z = $x + $y;
+print $z ->aspdl;
